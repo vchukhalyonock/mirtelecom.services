@@ -22,7 +22,7 @@ class Cron extends CI_Controller{
 		
 		//тянем все маки и пользователей из базы
 		$arpTable = $this->processor->getAllArpTable();
-		$unknownARPS = $this->processor->getExpiresFromAll($arpTable);
+		//$unknownARPS = $this->processor->getExpiresFromAll($arpTable);
 		$knownARPS = $this->processor->getPermanentFromAll($arpTable);
 		if(count($knownARPS) > 0){
 			foreach ($knownARPS as $arp){
@@ -44,7 +44,7 @@ class Cron extends CI_Controller{
 		}
 		
 		//проверяем тех, которых нет в базе
-		$arpTable = $this->processor->getAllArpTable();
+		//$arpTable = $this->processor->getAllArpTable();
 		$unknownARPS = $this->processor->getExpiresFromAll($arpTable);
 		if(count($unknownARPS) > 0){
 			foreach ($unknownARPS as $arp){
